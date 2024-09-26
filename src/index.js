@@ -503,7 +503,7 @@ class JSONInput extends Component {
             lines      : data.lines,
             error      : data.error
         });
-        let cursorPosition = this.getCursorPosition(data.error) + cursorOffset;
+        let cursorPosition = cursorPosition == 0 ? this.getCursorPosition(data.error) + cursorOffset : cursorPosition;
         this.setState({
             plainText  : data.indented,
             markupText : data.markup,
